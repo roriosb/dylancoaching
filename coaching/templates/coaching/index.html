@@ -1,0 +1,454 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Dylan Matías | Coaching Fitness & Mentalidad</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background-color: #fff;
+      color: #000;
+    }
+
+    /* Navbar */
+    .navbar {
+      background-color: #000;
+    }
+
+    .navbar a,
+    .navbar-brand {
+      color: #fff !important;
+    }
+
+    /* Efecto hover en navbar */
+    .navbar-nav .nav-link {
+      transition: all 0.3s ease;
+      padding: 8px 12px;
+      border-radius: 5px;
+      color: #fff !important;
+    }
+
+    .navbar-nav .nav-link:hover {
+      font-size: 1.1em;
+      background-color: rgba(255, 255, 255, 0.15);
+      /* Fondo claro translúcido */
+      color: #e27a02 !important;
+      /* Texto amarillo */
+    }
+
+    /* Hero */
+    .hero {
+      background-color: #f8f9fa;
+      padding: 100px 0;
+      min-height: 100vh;
+    }
+
+    /* Galería de videos */
+    .video-gallery iframe {
+      width: 100%;
+      height: 315px;
+    }
+
+    .video-section {
+      padding: 100px 0;
+      min-height: 100vh;
+    }
+
+    /* Testimonios */
+    .testimonial-section {
+      background-color: #fff;
+      padding: 100px 0;
+      min-height: 100vh;
+    }
+
+    .testimonial-card {
+      background-color: #f1f1f1;
+      border-radius: 10px;
+      padding: 30px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Planes */
+    .plan-section {
+      background-color: #f1f1f1;
+      padding: 100px 0;
+      min-height: 100vh;
+    }
+
+    .plan-card {
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      padding: 60px;
+      background-color: #fff;
+      color: #000;
+      transition: transform 0.3s, background-color 0.3s, color 0.3s;
+    }
+
+    .plan-card:hover {
+      transform: translateY(-5px);
+      background-color: #ff6600;
+      color: #fff;
+    }
+
+    .plan-card:hover h5,
+    .plan-card:hover p,
+    .plan-card:hover li {
+      color: #f14602;
+    }
+
+    .plan-card:hover .btn {
+      background-color: #fff;
+      color: #ff6600;
+      border-color: #fff;
+    }
+
+    .plan-card ul {
+      padding-left: 0;
+      list-style: none;
+    }
+
+    .plan-card ul li::before {
+      content: "✔ ";
+      color: #28a745;
+    }
+
+    .plan-card:hover ul li::before {
+      color: #fff;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #111;
+      color: #ccc;
+      padding: 40px 0;
+    }
+
+    /* Animación personalizada para mostrar el plan elite */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInSlide 0.6s ease forwards;
+    }
+
+    @keyframes fadeInSlide {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+  </style>
+
+
+</head>
+
+<body>
+  <script src="{% static 'js/script.js' %}"></script>
+
+  <!-- Navbar -->
+  <nav class="navbar navbar-expand-lg fixed-top">
+    <div class="container">
+      <a class="navbar-brand" href="#">
+        <img src="{% static 'imagenes/logo.png' %}" alt="Logo" height="130" class="d-inline-block align-text-top">
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon text-light"></span>
+      </button>
+      <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <ul class="navbar-nav me-3">
+          <li class="nav-item"><a class="nav-link" href="#servicios">Inicio</a></li>
+          <li class="nav-item"><a class="nav-link" href="#videos">Galería</a></li>
+          <li class="nav-item"><a class="nav-link" href="#planes">Planes</a></li>
+          <li class="nav-item"><a class="nav-link" href="#elite">Elite Fitness 180</a></li>
+        </ul>
+        <a href="https://www.instagram.com/dylmatias_/" target="_blank" class="btn btn-outline-light">Instagram</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section id="servicios" class="hero d-flex align-items-center">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-md-6 mb-4 mb-md-0 pe-md-5" data-aos="fade-right">
+          <video id="heroVideo" autoplay loop playsinline controls class="img-fluid rounded w-100">
+            <source src="{% static 'videos/videoPrincipal.mp4' %}" type="video/mp4">
+            Tu navegador no soporta el video.
+          </video>
+        </div>
+        <div class="col-md-6" data-aos="fade-left">
+          <h1 class="display-5">Transforma tu cuerpo y mente</h1>
+          <p class="lead">Coaching personalizado en fitness y mentalidad para lograr cambios físicos duraderos y
+            fortaleza mental.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Galería de Videos -->
+  <section id="videos" class="video-section">
+    <div class="container">
+      <h2 class="text-center mb-4" data-aos="fade-up">Galería de Videos</h2>
+      <div class="row video-gallery">
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID1" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="200">
+          <iframe src="https://www.youtube.com/embed/VIDEO_ID2" frameborder="0" allowfullscreen></iframe>
+        </div>
+        <div class="col-md-4 mb-4" data-aos="fade-up" data-aos-delay="300">
+          <iframe src="https://www.youtube.com/embed/JweHiI8AT-M" frameborder="0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Testimonios -->
+  <section id="testimonios" class="testimonial-section py-5 bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up">Resultados</h2>
+      <div class="row justify-content-center">
+
+        <!-- Testimonio 1 -->
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card text-center border-0 shadow-lg h-100 p-4" style="border-radius: 20px;">
+            <img src="{% static 'imagenes/diego.jpeg' %}" alt="Diego" class="mx-auto mt-3 rounded"
+              style="width: 250px; height: 180px; object-fit: cover;">
+            <div class="card-body">
+              <h4 class="card-title mb-2">Diego</h4>
+              <p class="text-muted mb-2" style="font-size: 1rem;">Transformación de 9 semanas · Recomposición corporal
+              </p>
+              <p class="card-text" style="font-size: 1.1rem;"><strong>Comienzo:</strong> 83,5 kg ·
+                <strong>Resultado:</strong> 76 kg
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card text-center border-0 shadow-lg h-100 p-4" style="border-radius: 20px;">
+            <img src="{% static 'imagenes/matias.jpeg' %}" alt="Diego" class="mx-auto mt-3 rounded"
+              style="width: 250px; height: 180px; object-fit: cover;">
+            <div class="card-body">
+              <h4 class="card-title mb-2">Matias</h4>
+              <p class="text-muted mb-2" style="font-size: 1rem;">Recomposición corporal
+              </p>
+              <p class="card-text" style="font-size: 1.1rem;"><strong>Comienzo:</strong> 68 kg ·
+                <strong>Resultado:</strong> 70 kg
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card text-center border-0 shadow-lg h-100 p-4" style="border-radius: 20px;">
+            <img src="{% static 'imagenes/bastian.jpeg' %}" alt="Diego" class="mx-auto mt-3 rounded"
+              style="width: 220px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+              <h4 class="card-title mb-2">Bastian</h4>
+              <p class="text-muted mb-2" style="font-size: 1rem;">Recomposición corporal
+              </p>
+              <p class="card-text" style="font-size: 1.1rem;"><strong>Comienzo:</strong> 69 kg ·
+                <strong>Resultado:</strong> 67 kg
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card text-center border-0 shadow-lg h-100 p-4" style="border-radius: 20px;">
+            <img src="{% static 'imagenes/dylan.jpeg' %}" alt="Diego" class="mx-auto mt-3 rounded"
+              style="width: 220px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+              <h4 class="card-title mb-2">Dylan</h4>
+              <p class="text-muted mb-2" style="font-size: 1rem;">Aumento de masa muscular</p>
+              <p class="card-text" style="font-size: 1.1rem;"><strong>Comienzo:</strong> 59 kg ·
+                <strong>Resultado:</strong> 65 kg
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-6 mb-4" data-aos="fade-up" data-aos-delay="100">
+          <div class="card text-center border-0 shadow-lg h-100 p-4" style="border-radius: 20px;">
+            <img src="{% static 'imagenes/martin.jpeg' %}" alt="Diego" class="mx-auto mt-3 rounded"
+              style="width: 390px; height: 250px; object-fit: cover;">
+            <div class="card-body">
+              <h4 class="card-title mb-2">Martin</h4>
+              <p class="text-muted mb-2" style="font-size: 1rem;">Recomposición corporal</p>
+              <p class="card-text" style="font-size: 1.1rem;"><strong>Comienzo:</strong> 76 kg ·
+                <strong>Resultado:</strong> 74 kg
+              </p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+
+  <!-- NUEVO PLAN: Elite Fitness 180 -->
+  <section class="plan-section bg-white" id="elite">
+    <div class="container">
+      <div class="text-center" data-aos="fade-up">
+        <h2 class="mb-3">Elite Fitness 180</h2>
+        <p class="fst-italic mb-2">Programa premium VIP</p>
+
+        <!-- Botón "Ver más" mejorado -->
+        <button id="btn-elite-open" onclick="toggleElite(true)"
+          class="btn btn-warning px-4 py-2 fw-semibold shadow-sm mb-4" style="font-size: 1.1rem; border-radius: 10px;">
+          <i class="bi bi-chevron-down me-1"></i> Ver más
+        </button>
+      </div>
+
+      <!-- Contenido oculto al inicio -->
+      <div id="elite-wrapper" style="display: none;">
+        <div class="row justify-content-center">
+          <div class="col-md-10 col-lg-8">
+            <div id="elite-content" class="plan-card text-dark" style="background-color: transparent; border: none;">
+              <ul>
+                <li>Plan de entrenamiento personalizado <strong>Gimnasio, casa, aire libre</strong></li>
+                <li>Plan de alimentación personalizado <strong>Perder grasa, ganar masa muscular, recomposición
+                    corporal</strong></li>
+                <li>Módulos educativos semanales <strong>entrenamiento, alimentación, mentalidad, hábitos</strong></li>
+                <li>Videollamadas semanales <strong>Mentalidad, leyes universales, dominar el miedo, entorno y
+                    más</strong></li>
+                <li>Evaluación de progreso cada 2 semanas</li>
+                <li>Soporte directo 1:1 vía WhatsApp, respondo todas tus dudas</li>
+              </ul>
+              <p class="mt-4"><strong>Elite Fitness 180</strong> es un programa para quienes están listos para accionar
+                y conectar con su mejor versión.</p>
+              <p>Vas a aprender a construir una mentalidad inquebrantable y un físico real, fuerte, duradero y
+                saludable… con el mismo sistema que yo apliqué para cambiar mi vida y la de mis alumnos.</p>
+
+              <div class="text-center">
+                <button type="button" class="btn btn-dark mt-3" data-bs-toggle="modal" data-bs-target="#eliteFormModal">
+                  Solicita este plan
+                </button>
+              </div>
+
+              <!-- Botón "Ver menos" con el mismo estilo -->
+              <div class="mt-4 text-center">
+                <button id="btn-elite-close" onclick="toggleElite(false)"
+                  class="btn btn-outline-secondary px-4 py-2 fw-semibold" style="font-size: 1rem; border-radius: 10px;">
+                  <i class="bi bi-chevron-up me-1"></i> Ver menos
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Modal Formulario Elite Fitness 180 -->
+  <div class="modal fade" id="eliteFormModal" tabindex="-1" aria-labelledby="eliteFormLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content p-4">
+        <div class="modal-header">
+          <h5 class="modal-title" id="eliteFormLabel">Formulario - Elite Fitness 180</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+        </div>
+        <div class="modal-body">
+          <form id="eliteForm">
+            <div class="mb-3">
+              <label for="nombre" class="form-label">Nombre completo</label>
+              <input type="text" class="form-control" id="nombre" required>
+            </div>
+            <div class="mb-3">
+              <label for="edad" class="form-label">Edad</label>
+              <input type="number" class="form-control" id="edad" required>
+            </div>
+            <div class="mb-3">
+              <label for="telefono" class="form-label">Número telefónico</label>
+              <input type="tel" class="form-control" id="telefono" required>
+            </div>
+            <div class="mb-3">
+              <label for="objetivo" class="form-label">¿Cuál es tu objetivo?</label>
+              <select class="form-select" id="objetivo" required>
+                <option value="">Selecciona una opción</option>
+                <option>Ganar músculo</option>
+                <option>Perder grasa</option>
+                <option>Recomposición corporal</option>
+              </select>
+            </div>
+            <div class="mb-3">
+              <label for="habitos" class="form-label">¿Cómo describes tus hábitos alimenticios actuales?</label>
+              <textarea class="form-control" id="habitos" rows="2" required></textarea>
+            </div>
+            <div class="mb-3">
+              <label for="compromiso" class="form-label">En la escala del 1 al 10, ¿qué tan comprometido estás para
+                alcanzar tus objetivos?</label>
+              <input type="number" class="form-control" id="compromiso" min="1" max="10" required>
+            </div>
+            <div class="mb-3">
+              <label for="ocupacion" class="form-label">¿Cuál es tu trabajo actual o a qué te dedicas?</label>
+              <input type="text" class="form-control" id="ocupacion" required>
+            </div>
+            <div class="mb-3">
+              <label for="pais" class="form-label">¿De qué país y ciudad eres?</label>
+              <input type="text" class="form-control" id="pais" required>
+            </div>
+            <div class="mb-3">
+              <label for="inversion" class="form-label">¿Cuánto estás dispuesto a invertir en ti?</label>
+              <input type="text" class="form-control" id="inversion" required>
+            </div>
+            <div class="modal-footer mt-4">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
+              <button type="submit" class="btn btn-dark">Enviar</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <!-- Planes -->
+  <section id="planes" class="plan-section">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="fade-up">Plan Fitness 180</h2>
+      <div class="row justify-content-center">
+        <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="plan-card p-4 text-center bg-white">
+            <h5 class="mb-5">Programa Fitness 180</h5>
+            <ul class="mb-6">
+              <li>Entrenamiento personalizado (gimnasio, casa, aire libre)</li>
+              <li>Nutrición personalizada según tus objetivos y condiciones</li>
+              <li>Contacto 1:1 por WhatsApp para resolver todas tus dudas</li>
+              <li> Seguimiento semanal y controles cada 15 días</li>
+            </ul>
+            <p><strong>1 MES - $57</strong></p>
+            <p><strong>2 MESES - $97</strong></p>
+            <p><strong>3 MESES - $147</strong></p>
+            <a id="btn-wsp-plan" class="btn btn-dark mt-3" target="_blank">Contáctame</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- Footer -->
+  <footer class="text-center">
+    <div class="container">
+      <p>&copy; 2025 Dylan Matías. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    AOS.init();
+  </script>
+  <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
